@@ -1,0 +1,31 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "jsRules": {},
+  "linterOptions": {
+      "exclude": ["**/*.d.ts"]
+  },
+  "nodePath": "./node_modules",
+  "rules": {
+      "align": [true, "parameters", "statements"],
+      "arrow-parens": [true, "ban-single-arg-parens"],
+      "eofline": true,
+      "interface-name": false,
+      "max-classes-per-file": false,
+      "max-line-length": [true, { "limit": 150, "ignore-pattern": "^import |^export {(.*?)}" }],
+      "no-any": true,
+      "no-consecutive-blank-lines": true,
+      "no-console": true,
+      "no-var-requires": false,
+      "no-unused-declaration": true,
+      "object-literal-sort-keys": false,
+      "one-variable-per-declaration": false,
+      "ordered-imports": false,
+      "object-literal-key-quotes": [true, "as-needed"],
+      "quotemark": [true, "single", "avoid-escape", "avoid-template"],
+      "trailing-comma": true,
+      "no-floating-promises": true,
+      "typedef": [true, "array-descructuring", "call-signature", "member-variable-declaration", "parameter", "property-declaration"]
+  },
+  "rulesDirectory": []
+}

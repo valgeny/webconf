@@ -1,0 +1,5 @@
+openapi: 3.0.0
+info:
+  title: node-ts-template
+  description: node ts template
+  version: beta
