@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "556f40ff-8716-45c2-97ae-b688ac7cc4be",
+		"name": "TD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7132248",
+		"_collection_link": "https://stargate-wmt.postman.co/workspace/Walmart~6bc745da-f5a7-45d0-bbdd-aa3d73cb6033/collection/7132248-556f40ff-8716-45c2-97ae-b688ac7cc4be?action=share&creator=7132248&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "participants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v0/participants/?relations=room&relations=user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v0",
+						"participants",
+						""
+					],
+					"query": [
+						{
+							"key": "relations",
+							"value": "room"
+						},
+						{
+							"key": "relations",
+							"value": "user"
+						},
+						{
+							"key": "limit",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "participants",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v0/participants/BD8E1446-E168-49FC-B209-B65BE35B0478",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v0",
+						"participants",
+						"BD8E1446-E168-49FC-B209-B65BE35B0478"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "participants",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"4D0C57AE-DECF-47D8-ACC4-B7D7F5E7F153\",\n    \"roomId\": \"9ADA34E3-6128-4FA4-905F-756F65D4EE9F\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v0/participants/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v0",
+						"participants",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/rooms/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v0/rooms/?relations=participants&serverId=8",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v0",
+						"rooms",
+						""
+					],
+					"query": [
+						{
+							"key": "relations",
+							"value": "participants"
+						},
+						{
+							"key": "roomId",
+							"value": "0ADD1F1F-E84C-4A6A-90AF-E6CF89A31B95",
+							"disabled": true
+						},
+						{
+							"key": "serverId",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/rooms",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"hostId\": \"D99B3956-92FE-4A51-A2E2-7761DE55FF43\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v0/rooms/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v0",
+						"rooms",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v0/users/?relations=participant",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v0",
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "displayName",
+							"value": "Maia",
+							"disabled": true
+						},
+						{
+							"key": "relations",
+							"value": "participant"
+						},
+						{
+							"key": "displayName",
+							"value": "Paxton",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"displayName\": \"{{$randomFirstName}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v0/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v0",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/utils/hash",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"input\": \"12345\",\n    \"algo\": \"hash\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/utils/hash/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"utils",
+						"hash",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
